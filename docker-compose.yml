@@ -13,7 +13,7 @@ services:
     build: .
     image: clon-demo-events:latest
     volumes:
-      - ./clon:/app
+      - .:/app
     depends_on:
       - db
     network_mode: "host"

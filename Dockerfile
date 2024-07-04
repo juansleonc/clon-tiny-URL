@@ -6,15 +6,15 @@ RUN apt-get install -y shared-mime-info build-essential
 RUN mkdir /app
 WORKDIR /app
 
-# COPY Gemfile /app/Gemfile
-# COPY Gemfile.lock /app/Gemfile.lock
-# COPY entrypoint.sh /usr/bin/
-# RUN chmod +x /usr/bin/entrypoint.sh
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
 
-# RUN bundle install
+RUN bundle install
 COPY . /app
 
-# ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 8096
 
 CMD ["bundle", "exec", "rails", "server", "-b", "0.0.0.0", "-p", "8096"]

@@ -1,0 +1,20 @@
+development:
+  clients:
+    default:
+      database: clon-tiny-url-development
+      hosts:
+        - localhost:27017
+test:
+  clients:
+    default:
+      database: clon-tiny-url-test
+      hosts:
+        - localhost:27017
+
+production:
+  clients:
+    default:
+      uri: mongodb+srv://juansleonc:qwerty123@cluster0.d6qraru.mongodb.net/clon-tiny-url-production?retryWrites=true&w=majority
+  options:
+    use_activesupport_time_zone: true
+    log_level: :warn
